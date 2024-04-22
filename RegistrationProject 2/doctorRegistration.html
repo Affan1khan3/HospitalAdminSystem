@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Registration</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center">
+                    <h1>Doctor Registration Form</h1>
+                </div>
+                <div class="panel-body">
+                    <form action="connectDoctor.php" method="post">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="specialty">Specialty</label>
+                            <input type="text" class="form-control" id="specialty" name="specialty" required />
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Register Doctor" />
+                    </form>
+                    <!-- Button to view registered doctors -->
+                    <a href="viewDoctors.php" class="btn btn-secondary" style="margin-top: 20px;">View Registered Doctors</a>
+                </div>
+                <div class="panel-footer text-right">
+                    <small>&copy; Your Hospital</small>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-info">Back to Main Menu</a>
+        </div>
+    </div>
+</body>
+</html>

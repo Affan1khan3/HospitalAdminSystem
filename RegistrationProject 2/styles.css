@@ -1,0 +1,196 @@
+/*body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-link {
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.btn-feature {
+    text-align: center;
+    color: white;
+    background-color: #007bff;
+    border-radius: 7px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-feature:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.card-body {
+    padding: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+}//=====================
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    background: linear-gradient(to right, #5f2c82, #49a09d);
+    color: white;
+    padding-top: 20px;
+}
+
+.navbar {
+    background: #fff;
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.nav-link {
+    color: #5f2c82 !important;
+}
+
+.btn-outline-primary {
+    border-color: #5f2c82;
+    color: #5f2c82;
+}
+
+.btn-outline-primary:hover {
+    background: #5f2c82;
+    color: #fff;
+}
+
+.btn-outline-secondary {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+.btn-outline-secondary:hover {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.btn-outline-success {
+    border-color: #ffd166;
+    color: #ffd166;
+}
+
+.btn-outline-success:hover {
+    background: #ffd166;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.5rem;
+}*/
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    background: #eee9b4;
+    color: #333;
+    padding-top: 20px;
+}
+
+.navbar {
+    background: #007bff;
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: rgb(104, 183, 243) !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.main-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #f33939;
+    background: #007bff; /* Default blue for all buttons */
+    border: none;
+    border-radius: 0.3rem;
+    transition: background 0.3s ease-in-out;
+}
+
+.main-button:hover {
+    background: #0056b3; /* Darker shade for hover state */
+    text-decoration: none;
+}
+
+/* Specific button colors */
+.main-button.patient {
+    background: #6c757d; /* Bootstrap's secondary color */
+}
+
+.main-button.doctor {
+    background: #28a745; /* Bootstrap's green */
+}
+
+.main-button.appointment {
+    background: #17a2b8; /* Bootstrap's info color */
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #666;
+}

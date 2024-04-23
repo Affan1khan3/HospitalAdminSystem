@@ -1,0 +1,115 @@
+-- Creating the 'doctor' table
+CREATE TABLE `doctor` (
+  `doctorID` INT NOT NULL AUTO_INCREMENT,
+  `firstName` VARCHAR(100) NOT NULL,
+  `lastName` VARCHAR(100) NOT NULL,
+  `specialty` VARCHAR(150) NOT NULL,
+  PRIMARY KEY (`doctorID`)
+);
+
+-- Creating the 'patientregistration' table
+CREATE TABLE `patientregistration` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `firstName` VARCHAR(100) NOT NULL,
+  `lastName` VARCHAR(100) NOT NULL,
+  `dob` DATE NOT NULL,
+  `gender` CHAR(1) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `contactNumber` VARCHAR(15) NOT NULL,
+  `doctorID` INT,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`doctorID`) REFERENCES `doctor`(`doctorID`) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- Creating the 'appointment' table
+CREATE TABLE `appointment` (
+  `appointmentID` INT NOT NULL AUTO_INCREMENT,
+  `appointmentDate` DATE NOT NULL,
+  `appointmentTime` TIME NOT NULL,
+  `purpose` TEXT NOT NULL,
+  `patientID` INT NOT NULL,
+  PRIMARY KEY (`appointmentID`),
+  FOREIGN KEY (`patientID`) REFERENCES `patientregistration`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--------------------------------------------------------------------------------------------------------------
+//For the patientregistration Table:
+Read (SELECT) Patients:
+
+sql
+
+SELECT * FROM patientregistration;
+Update (UPDATE) a Patient Record:
+
+sql
+
+UPDATE patientregistration 
+SET 
+    firstName = 'Jane',
+    lastName = 'Doe',
+    dob = '1980-01-01',
+    gender = 'F',
+    email = 'jane.doe@example.com',
+    contactNumber = '5551234567',
+    doctorID = 2
+WHERE 
+    id = 1; -- Assuming '1' is the ID of the patient you want to update
+Delete (DELETE) a Patient Record:
+
+sql
+
+DELETE FROM patientregistration WHERE id = 1; -- Replace '1' with the patient ID you wish to delete
+For the doctor Table:
+Read (SELECT) Doctors:
+
+sql
+
+SELECT * FROM doctor;
+Update (UPDATE) a Doctor Record:
+
+sql
+
+UPDATE doctor 
+SET 
+    firstName = 'John',
+    lastName = 'Smith',
+    specialty = 'Cardiology'
+WHERE 
+    doctorID = 1; -- Assuming '1' is the ID of the doctor you want to update
+Delete (DELETE) a Doctor Record:
+
+sql
+
+DELETE FROM doctor WHERE doctorID = 1; -- Replace '1' with the doctor ID you wish to delete
+For the appointment Table:
+Read (SELECT) Appointments:
+
+sql
+
+SELECT * FROM appointment;
+Update (UPDATE) an Appointment Record:
+
+sql
+
+UPDATE appointment 
+SET 
+    appointmentDate = '2023-12-01',
+    appointmentTime = '14:00:00',
+    purpose = 'Routine checkup',
+    patientID = 1
+WHERE 
+    appointmentID = 1; -- Assuming '1' is the ID of the appointment you want to update
+Delete (DELETE) an Appointment Record:
+
+sql
+
+DELETE FROM appointment WHERE appointmentID = 1; -- Replace '1' with the appointment ID you wish to delete
+When implementing the above SQL queries in your application, make sure to use prepared statements to prevent SQL injection, especially when dealing with data input by users. Here’s an example of how to use prepared statements with the MySQLi extension in PHP:
+
+php
+
+// Assuming $conn is the connection object and $id is the patient ID you're updating
+$stmt = $conn->prepare("UPDATE patientregistration SET firstName=?, lastName=?, dob=?, gender=?, email=?, contactNumber=?, doctorID=? WHERE id=?");
+$stmt->bind_param("sssssii", $firstName, $lastName, $dob, $gender, $email, $contactNumber, $doctorID, $id);
+$stmt->execute();
+$stmt->close();

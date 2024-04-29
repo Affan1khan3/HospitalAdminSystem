@@ -4,31 +4,34 @@ The Hospital Management System is a comprehensive web-based application designed
 
 For windows:
 First install XAMPP
-Install PHP and windows Linux system
+Install PHP. Go to https://windows.php.net/download#php-8.3 and install VS16 x64 Thread Safe zip file.
+Download windows Linux system: do `wsl --install` in cmd prompt to install
 
-After PHP installatoin
-Add php to user systems for windows
-Uncomment php mysqli extension line in php.ini file saved within php installation in C drive
+After PHP installation
+Add php to user systems for windows:
+To do so: Uncomment php mysqli extension line in php.ini file saved within php installation in C drive(where you just downloaded it). 
+Copy the path of this file and go to System Properties, go to advanced settings, and go to environment variables. Add the path to user variables or system variables. Click edit, click new, add the path to the total php folder. It will look like this C:\php-8.3.6-Win32-vs16-x64.(Saved in my C drive)
 
 To check if mysqli is working, go to cmd prompt, go to cd of the php file we saved. it is in C drive. 
-use php -m to check.(it will show you if mysqli is there or not). If it is not there, go to php.ini file in php installation folder in C drive, uncomment mysqli extension line.
+use php -m to check.(it will show you if mysqli is there or not). If it is not there, go to php.ini file in php installation folder in C drive, uncomment mysqli extension line, save it, enter it into the user variables(maybe enter into system variables this time). Save it and run the command in cmd prompt again to check if mysqli is there.
 
 
-TO START THE PROGRAM/SITE
+TO START THE PROGRAM/APPLICATION
 
-START SERVER
+TO START SERVER
 Start XAMPP
 Start Apache
 Navigate to browser, go to localhost:80 
-Go to xampp website that comes up and click phpmyadmin
+Go to XAMPP website that comes up and click phpmyadmin on the dashboard
 Go back to XAMPP app and start mySQL
 Then refresh the xampp website browser
 phpmyadmin should start. Here you can access all the databases.
 
 START PROGRAM
 To start the program/website.
-Open command prompt, cd into C:\Users\Affan\NewHospital\CS4347PR>cd RegistrationProject 2
-Then do command php -S localhost:5200 ; That is the port the localhost is running on (change if needed)
+Open command prompt, cd into your directory that the project is saved in, mine is 
+C:\Users\Affan\NewHospital\CS4347PR>cd RegistrationProject 2
+Then in cmd prompt, do command `php -S localhost:5502` ; 5502 is the port the localhost is running on (change if needed)
 Then use this link to open the website
 http://localhost:5502/index.html
 
